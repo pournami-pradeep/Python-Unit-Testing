@@ -1,5 +1,5 @@
 from my_class import MyClass
-
+import pytest
 
 class TestMyClass:
 
@@ -11,4 +11,9 @@ class TestMyClass:
     def test_sub(self):
         cls = MyClass()
         res = cls.subtraction(3,4)
-        assert res == 1
+        assert res == -1
+
+    def test_divide(self):
+        cls = MyClass()
+        with pytest.raises(ZeroDivisionError):
+            cls.divide(2,0)
