@@ -7,3 +7,8 @@ def test_addition_int():
 
 def test_addition_float():
     assert addition(2.4, 3.0) == 5.4
+
+def test_file(tmpdir):
+    file_path = tmpdir.join('test.txt')
+    file_path.write("hello world!")
+    assert file_path.read() == "hello world!"
